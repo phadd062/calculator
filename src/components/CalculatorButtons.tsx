@@ -1,7 +1,11 @@
 import Button from "./Button";
 import { ACTION } from "./reducer";
 
-const CalculatorButtons = ({ calcDispatch }: { calcDispatch: any }) => {
+const CalculatorButtons = ({
+	calcDispatch,
+}: {
+	calcDispatch: (action: { type: string; payload: { value: string } }) => void;
+}) => {
 	return (
 		<>
 			<Button
@@ -17,9 +21,9 @@ const CalculatorButtons = ({ calcDispatch }: { calcDispatch: any }) => {
 				type={ACTION.REMOVEDIGIT}
 			/>
 			<Button
+				className="border-b-2"
 				calcDispatch={calcDispatch}
 				label="/"
-				className="border-b-2"
 				type={ACTION.TYPECALC}
 			/>
 			<Button

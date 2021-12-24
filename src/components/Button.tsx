@@ -1,12 +1,12 @@
-const DigitButton = ({
+const Button = ({
 	className,
 	calcDispatch,
 	label,
 	type,
 }: {
-	className?: string | undefined;
+	className: string;
+	calcDispatch: (action: { type: string; payload: { value: string } }) => void;
 	label: string;
-	calcDispatch: any;
 	type: string;
 }) => {
 	const distpatchFunc = () => {
@@ -26,4 +26,4 @@ const DigitButton = ({
 	);
 };
 
-export default DigitButton;
+export default Button;
