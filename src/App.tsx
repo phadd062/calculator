@@ -1,14 +1,10 @@
-import { useReducer } from "react";
-import Button from "./Button";
-import { INITIALREDUCER, reducer } from "./reducer";
+import Calculator from "./components/Calculator";
 
 const App = () => {
-	const [calcState, calcDispatch] = useReducer(reducer, INITIALREDUCER);
-
 	return (
 		<div className="flex flex-col justify-start gap-10 items-center bg-gradient-to-r from-stone-300 to-sky-500 min-h-screen">
 			<a
-				href="https://github.com/phadd062"
+				href="https://github.com/phadd062/calculator"
 				className="self-end flex flex-row justify-center items-center gap-2 bg-slate-700 px-3 py-2 m-4 rounded-md tracking-wide text-gray-50 shadow-xl transition-all duration-500 bg-gradient-to-l from-slate-800 via-gray-500 to-slate-600 bg-[length:200%_200%] bg-left hover:bg-right"
 			>
 				<div className="w-5">
@@ -33,86 +29,7 @@ const App = () => {
 			<h1 className="text-gray-50 text-2xl md:text-3xl font-semibold text-center tracking-wide mx-8">
 				Calculator in React and TailwindCSS
 			</h1>
-			<div className="grid grid-cols-4 shadow-2xl mb-10">
-				<div className="flex flex-col justify-center items-end col-span-4 bg-gradient-to-r from-gray-800 to-slate-700 h-24 px-3 rounded-t-lg">
-					<span className="text-gray-50 text-opacity-75 text-sm">
-						123,452 *
-					</span>
-					<span className="text-gray-50 text-2xl transition-all">
-						{calcState.currentValue}
-					</span>
-				</div>
-				<Button
-					calcDispatch={calcDispatch}
-					label="AC"
-					className="border-b-2 border-r-2 col-span-2"
-				/>
-				<Button
-					calcDispatch={calcDispatch}
-					label="DEL"
-					className="border-b-2 border-r-2"
-				/>
-				<Button calcDispatch={calcDispatch} label="/" className="border-b-2" />
-				<Button
-					calcDispatch={calcDispatch}
-					label="1"
-					className="border-b-2 border-r-2"
-				/>
-				<Button
-					calcDispatch={calcDispatch}
-					label="2"
-					className="border-b-2 border-r-2"
-				/>
-				<Button
-					calcDispatch={calcDispatch}
-					label="3"
-					className="border-b-2 border-r-2"
-				/>
-				<Button calcDispatch={calcDispatch} label="*" className="border-b-2" />
-				<Button
-					calcDispatch={calcDispatch}
-					label="4"
-					className="border-b-2 border-r-2"
-				/>
-				<Button
-					calcDispatch={calcDispatch}
-					label="5"
-					className="border-b-2 border-r-2"
-				/>
-				<Button
-					calcDispatch={calcDispatch}
-					label="6"
-					className="border-b-2 border-r-2"
-				/>
-				<Button calcDispatch={calcDispatch} label="+" className="border-b-2" />
-				<Button
-					calcDispatch={calcDispatch}
-					label="7"
-					className="border-b-2 border-r-2"
-				/>
-				<Button
-					calcDispatch={calcDispatch}
-					label="8"
-					className="border-b-2 border-r-2"
-				/>
-				<Button
-					calcDispatch={calcDispatch}
-					label="9"
-					className="border-b-2 border-r-2"
-				/>
-				<Button calcDispatch={calcDispatch} label="-" className="border-b-2" />
-				<Button
-					calcDispatch={calcDispatch}
-					label="."
-					className="border-r-2 rounded-bl-lg"
-				/>
-				<Button calcDispatch={calcDispatch} label="0" className="border-r-2" />
-				<Button
-					calcDispatch={calcDispatch}
-					label="="
-					className="col-span-2 rounded-br-lg"
-				/>
-			</div>
+			<Calculator />
 		</div>
 	);
 };
